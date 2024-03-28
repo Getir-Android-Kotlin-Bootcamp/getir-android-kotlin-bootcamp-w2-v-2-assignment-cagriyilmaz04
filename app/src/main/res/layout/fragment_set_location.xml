@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        tools:context=".SetLocationActivity">
+
+    </fragment>
+
+    <ImageView
+        android:id="@+id/imageViewBack"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="29dp"
+        map:layout_constraintStart_toStartOf="@+id/constraint_search"
+        map:layout_constraintTop_toTopOf="parent"
+        map:srcCompat="@drawable/back_pressed" />
+
+    <ImageView
+        android:id="@+id/imageViewNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="305dp"
+        android:layout_marginTop="29dp"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        map:srcCompat="@drawable/icon_notification" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_search"
+        android:layout_width="325dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/constraint_bg"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewSearch"
+            android:layout_width="18dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="14dp"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toTopOf="parent"
+            map:srcCompat="@drawable/search" />
+
+        <TextView
+            android:id="@+id/textViewSearch"
+            android:layout_width="152dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="8dp"
+            android:background="#00000000"
+            android:ems="10"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:hint="@string/where_is_your_location"
+            android:inputType="text"
+            android:textColorHint="@color/black"
+            android:textSize="12sp"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintDetail"
+        android:layout_width="342dp"
+        android:layout_height="181dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="616dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="94dp"
+        android:background="@drawable/constraint_bg_white"
+        android:elevation="4dp"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="1.0"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textViewYourLocation"
+            android:layout_width="0dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="210dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/your_location"
+            android:textSize="14sp"
+            map:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toTopOf="parent"
+            map:layout_constraintVertical_bias="0.0" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="303dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="54dp"
+            android:elevation="4dp"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                map:layout_constraintBottom_toBottomOf="parent"
+                map:layout_constraintEnd_toStartOf="@+id/textViewLocation"
+                map:layout_constraintHorizontal_bias="0.0"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toTopOf="parent"
+                map:layout_constraintVertical_bias="0.571"
+                map:srcCompat="@drawable/small_icon_location" />
+
+            <TextView
+                android:id="@+id/textViewLocation"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="47dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text=""
+                android:gravity="center_vertical"
+                android:textColor="@color/text_full_location"
+                android:textSize="15sp"
+                map:layout_constraintBottom_toBottomOf="parent"
+                map:layout_constraintEnd_toEndOf="parent"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="322dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="114dp"
+            android:layout_marginEnd="27dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/set_location"
+            android:textAllCaps="false"
+            android:textColor="@color/text_white"
+            map:layout_constraintBottom_toBottomOf="parent"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintHorizontal_bias="0.523"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

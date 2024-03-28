@@ -5,4 +5,9 @@
     <string name="skip">Skip</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_set_location">SetLocationActivity</string>
+    <string name="set_location">Set Location</string>
+    <string name="your_location">Your Location</string>
+    <string name="google_maps_key">AIzaSyCaQfgz_dbGg5GpbVNCEHWy6G9ftWQLjpw</string>
+    <string name="where_is_your_location">Where is your location</string>
 </resources>
