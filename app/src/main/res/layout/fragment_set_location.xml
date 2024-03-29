@@ -13,7 +13,7 @@
         android:layout_height="0dp"
         map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintEnd_toEndOf="parent"
-        map:layout_constraintHorizontal_bias="1.0"
+        map:layout_constraintHorizontal_bias="0.0"
         map:layout_constraintStart_toStartOf="parent"
         map:layout_constraintTop_toTopOf="parent"
         map:layout_constraintVertical_bias="0.0"
@@ -25,8 +25,9 @@
         android:id="@+id/imageViewBack"
         android:layout_width="45dp"
         android:layout_height="45dp"
+        android:layout_marginStart="33dp"
         android:layout_marginTop="29dp"
-        map:layout_constraintStart_toStartOf="@+id/constraint_search"
+        map:layout_constraintStart_toStartOf="parent"
         map:layout_constraintTop_toTopOf="parent"
         map:srcCompat="@drawable/back_pressed" />
 
@@ -34,17 +35,17 @@
         android:id="@+id/imageViewNotification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="305dp"
         android:layout_marginTop="29dp"
-        map:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="33dp"
+        map:layout_constraintEnd_toEndOf="parent"
         map:layout_constraintTop_toTopOf="parent"
         map:srcCompat="@drawable/icon_notification" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_search"
-        android:layout_width="325dp"
+        android:layout_width="350dp"
         android:layout_height="43dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="33dp"
         android:layout_marginTop="92dp"
         android:background="@drawable/constraint_bg"
         map:layout_constraintStart_toStartOf="parent"
