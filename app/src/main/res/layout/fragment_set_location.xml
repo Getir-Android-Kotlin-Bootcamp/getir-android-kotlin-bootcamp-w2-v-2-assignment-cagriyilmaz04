@@ -13,8 +13,10 @@
         android:layout_height="0dp"
         map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="1.0"
         map:layout_constraintStart_toStartOf="parent"
         map:layout_constraintTop_toTopOf="parent"
+        map:layout_constraintVertical_bias="0.0"
         tools:context=".SetLocationActivity">
 
     </fragment>
@@ -48,34 +50,46 @@
         map:layout_constraintStart_toStartOf="parent"
         map:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageViewSearch"
-            android:layout_width="18dp"
-            android:layout_height="16dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="14dp"
-            map:layout_constraintStart_toStartOf="parent"
-            map:layout_constraintTop_toTopOf="parent"
-            map:srcCompat="@drawable/search" />
-
-        <TextView
-            android:id="@+id/textViewSearch"
-            android:layout_width="152dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/inner_constraint_layout"
+            android:layout_width="178dp"
             android:layout_height="28dp"
-            android:layout_marginStart="68dp"
+            android:layout_marginStart="28dp"
             android:layout_marginTop="8dp"
-            android:background="#00000000"
-            android:ems="10"
-            android:fontFamily="@font/poppins_bold"
-            android:gravity="center"
-            android:hint="@string/where_is_your_location"
-            android:inputType="text"
-            android:textColorHint="@color/black"
-            android:textSize="12sp"
             map:layout_constraintStart_toStartOf="parent"
-            map:layout_constraintTop_toTopOf="parent" />
+            map:layout_constraintTop_toTopOf="parent">
 
+            <ImageView
+                android:id="@+id/imageViewSearch"
+                android:layout_width="18dp"
+                android:layout_height="16dp"
+                map:layout_constraintBottom_toBottomOf="parent"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toTopOf="parent"
+                map:srcCompat="@drawable/search" />
+
+            <TextView
+                android:id="@+id/textViewSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="#00000000"
+                android:clickable="true"
+                android:ems="10"
+                android:focusable="true"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:hint="@string/where_is_your_location"
+                android:inputType="text"
+                android:textColorHint="@color/black"
+                android:textSize="12sp"
+                map:layout_constraintBottom_toBottomOf="parent"
+                map:layout_constraintEnd_toEndOf="parent"
+                map:layout_constraintStart_toEndOf="@id/imageViewSearch"
+                map:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintDetail"
@@ -137,8 +151,8 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="47dp"
                 android:fontFamily="@font/poppins_medium"
-                android:text=""
                 android:gravity="center_vertical"
+                android:text=""
                 android:textColor="@color/text_full_location"
                 android:textSize="15sp"
                 map:layout_constraintBottom_toBottomOf="parent"

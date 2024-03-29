@@ -10,6 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -17,8 +18,8 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/rectangle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,6 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:visibility="gone"
         app:layout_constraintGuide_percent="0.33" />
 
     <View
@@ -38,6 +40,7 @@
         android:layout_height="6dp"
         android:layout_marginTop="24dp"
         android:background="?android:attr/listDivider"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view" />
@@ -48,26 +51,29 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:background="@null"
-        app:tabTextColor="@color/black"
-        app:tabIndicatorColor="#D61355"
-        app:tabSelectedTextColor="#D61355"
-        app:tabRippleColor="#D61355"
-        app:tabIndicatorFullWidth="false"
-        app:tabIndicatorHeight="2dp"
-        app:tabIndicator="@drawable/tab_indicator"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider">
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:tabIndicator="@drawable/tab_indicator"
+        app:tabIndicatorColor="#D61355"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorHeight="2dp"
+        app:tabRippleColor="#D61355"
+        app:tabSelectedTextColor="#D61355"
+        app:tabTextColor="@color/black">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create Account" />
+            android:text="Create Account"
+            android:visibility="gone" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login" />
+            android:text="Login"
+            android:visibility="gone" />
 
 
     </com.google.android.material.tabs.TabLayout>
@@ -75,7 +81,7 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager_account"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

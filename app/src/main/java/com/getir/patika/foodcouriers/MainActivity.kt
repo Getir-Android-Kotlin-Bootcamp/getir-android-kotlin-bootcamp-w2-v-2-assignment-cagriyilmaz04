@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity() {
         tabLayout = findViewById(R.id.tab_account)
         viewPager2 = findViewById(R.id.viewpager_account)
         pagerAdapter = PagerAdapter(supportFragmentManager,lifecycle).apply {
-            addFragment(CreateAccountFragment())
+            //To visible what I did
+            addFragment(SetLocationFragment())
             addFragment(LoginAccountFragment())
         }
         viewPager2.adapter = pagerAdapter

@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -25,12 +24,13 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.libraries.places.widget.Autocomplete
 import java.io.IOException
 import java.util.Locale
 
 
-class SetLocationFragment : Fragment(), OnMapReadyCallback {
+class SetLocationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     private var _binding: FragmentSetLocationBinding? = null
     private val binding get() = _binding!!
@@ -68,13 +68,18 @@ class SetLocationFragment : Fragment(), OnMapReadyCallback {
                     locationMarker.addMarker(mMap, it, place.name ?: "Selected Location",
                         R.drawable.pin_radar
                     )
+
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(it, 14f))
                     binding.textViewLocation.text = place.address
                 }
             }
         }
 
-        binding.constraintSearch.setOnClickListener {
+        binding.innerConstraintLayout.setOnClickListener {
+            placesAutocompleteUtil.launchAutocompleteIntent(autocompleteResultLauncher)
+        }
+        //Sometime when I click textView, it cannot make an action. Therefore, I wrote this part
+        binding.textViewSearch.setOnClickListener {
             placesAutocompleteUtil.launchAutocompleteIntent(autocompleteResultLauncher)
         }
 
@@ -105,7 +110,7 @@ class SetLocationFragment : Fragment(), OnMapReadyCallback {
                 locationMarker.addMarker(mMap, userLatLng, "Your Location", R.drawable.pin_radar)
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLatLng, 14f))
 
-                // Kullanıcının mevcut konumunun adresini al ve textViewLocation'a yaz
+                // Get user location and write it
                 val geocoder = Geocoder(requireContext(), Locale.getDefault())
                 try {
                     val addresses = geocoder.getFromLocation(it.latitude, it.longitude, 1)
@@ -115,10 +120,12 @@ class SetLocationFragment : Fragment(), OnMapReadyCallback {
                     }
                 } catch (e: IOException) {
                     e.printStackTrace()
-                    Toast.makeText(requireContext(), "Adres alınırken hata oluştu", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(requireContext(), "Adres alınırken hata oluştu", Toast.LENGTH_SHORT).show()
                 }
             }
         }
+        mMap.setOnMarkerClickListener(this)
+
     }
 
 
@@ -132,5 +139,9 @@ class SetLocationFragment : Fragment(), OnMapReadyCallback {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onMarkerClick(p0: Marker): Boolean {
+        return true
     }
 }
